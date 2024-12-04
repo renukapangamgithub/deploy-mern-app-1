@@ -49,7 +49,7 @@ function Login() {
       }else if (error){
         const details = error?.details[0].message
         handleError(details)
-      }else if (error){
+      }else if (!success){
         handleError(message)
       }
       console.log(result);
