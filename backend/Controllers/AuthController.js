@@ -30,7 +30,7 @@ const login = async(req,res)=>{
        const user = await UserModel.findOne({email})
        const erroMsg ='Auth failed or password is wrong'
        if(!user){
-           return res.status(409).json({message:`user is already exist,you can login`,success:false})
+           return res.status(403).json({ message: errorMsg, success: false})
        }
        const isPassEqual = await bcrypt.compare(password,user.password)
        if(!isPassEqual){
