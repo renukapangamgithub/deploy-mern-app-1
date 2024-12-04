@@ -37,10 +37,10 @@ function Login() {
         body: JSON.stringify(loginInfo),
       });
 
-      const result = await response.json();
-      const { success, message,jwtToken,name,error } = result;
+      const result = await response.json()
+      const { success, message,jwtToken,name,error } = result
       if (success) {
-        handleSuccess(message);
+        handleSuccess(message)
         localStorage.setItem('token',jwtToken)
         localStorage.setItem('loggedInUser',name)
         setTimeout(() => {
@@ -52,9 +52,9 @@ function Login() {
       }else if (!success){
         handleError(message)
       }
-      console.log(result);
+      console.log(result)
     } catch (err) {
-      handleError(err);
+      handleError(err)
     }
   };
 
