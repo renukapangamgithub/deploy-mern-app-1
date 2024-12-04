@@ -32,9 +32,9 @@ function Login() {
       const response = await fetch(url, {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(loginInfo),
+          "Content-Type": "application/json"
+        }
+        body: JSON.stringify(loginInfo)
       });
 
       const result = await response.json()
