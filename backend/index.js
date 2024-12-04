@@ -14,9 +14,7 @@ app.get('/ping',(req,res)=>{
     res.send('PONG');
 })
 app.use(bodyParser.json())
-app.use(cors({
-    origin: 'https://deploy-mern-app-1-ui-tau.vercel.app'
-}));
+app.use(cors());
 app.use('/auth',AuthRouter)
 app.use('/products',ProductRouter)
 
